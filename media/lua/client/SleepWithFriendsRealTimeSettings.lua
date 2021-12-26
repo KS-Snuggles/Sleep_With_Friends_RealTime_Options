@@ -13,7 +13,7 @@ local function mpSleep()
 				player:getStats():setFatigue(0)
 			else
 			end
-		else
+		elseif LoopCheck == 0 then
 			local serverDayLength = (SandboxVars.DayLength - 2)
 			local modFatigue = player:getStats():getFatigue()
 			local modEndurance = player:getStats():getEndurance()
@@ -24,6 +24,8 @@ local function mpSleep()
 			local addEndur = (subFatThree * 2)
 			local LoopCheck = 1
 		end
+	else
+		local LoopCheck = 0
 	end
 end
 Events.EveryOneMinute.Add(mpSleep)
