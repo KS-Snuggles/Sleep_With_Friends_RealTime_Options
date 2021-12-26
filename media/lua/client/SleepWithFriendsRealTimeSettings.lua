@@ -1,4 +1,4 @@
-local function mpSleep()
+function mpSleep()
 	local player = getPlayer()
 	if player:isAsleep() then
 		if  LoopCheck == 1 then
