@@ -7,4 +7,4 @@ https://docs.google.com/spreadsheets/d/13bkKakFLybGbhgZhiU5h0gdn6zWnkFF4swh4K_PG
 
 
 # Steam Workshop URL
-https://steamcommunity.com/sharedfiles/filedetails/?id=2694705684
+https://steamcommunity.com/sharedfiles/filedetails/?id=2686624983
