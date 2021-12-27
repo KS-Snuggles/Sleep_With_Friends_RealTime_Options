@@ -1,31 +1,36 @@
 function mpSleep()
-	local player = getPlayer()
+    local player = getPlayer()
+    local modData = player:getModData()
 	if player:isAsleep() then
-		if  LoopCheck == 1 then
-			local modFatigue = (modFatigue - subFatThree)
-			local modEndurance = (modEndurance + addEndur)
-			player:getStats():setFatigue(modFatigue)
-			player:getStats():setEndurance(modEndurance)
-			if player:getStats():getFatigue() <= 0 and AutoWake == 1 then
-				local LoopCheck = 0
+		if  modData.swfLoopCheck == 1 then
+			modData.swfFatigue = (modData.swfFatigue - modData.swfFatThree)
+			modData.swfEndurance = (modData.swfEndurance + modData.swfEndur)
+			player:getStats():setFatigue(math.max(0, modData.swfFatigue)
+			player:getStats():setEndurance(math.min(1, modData.swfEndurance)
+			player:getStats():setBoredom(modData.swfBoredom)
+			player:getStats():setMorale(modData.swfSadness)
+			if player:getStats():getFatigue() <= 0 and modData.swfAutoWake == 1 then
+				modData.swfLoopCheck = 0
 				player:forceAwake()
-			elseif player:getStats():getFatigue() <= 0 and AutoWake == 2 then
+			elseif player:getStats():getFatigue() <= 0 and modData.swfAutoWake == 2 then
 				player:getStats():setFatigue(0)
 			else
 			end
-		elseif LoopCheck == 0 then
-			local serverDayLength = (SandboxVars.DayLength - 2)
-			local modFatigue = player:getStats():getFatigue()
-			local modEndurance = player:getStats():getEndurance()
-			local AutoWake = SandboxVars.SleepWithFriends.AutoWake
-			local subFatOne = (24 / serverDayLength)
-			local subFatTwo = (1 / subFatOne)
-			local subFatThree = (subFatTwo / SandboxVars.SleepWithFriends.TestOption)
-			local addEndur = (subFatThree * 2)
-			local LoopCheck = 1
+        elseif modData.swfLoopCheck == 0 then
+			modData.swfServerDayLength = (SandboxVars.DayLength - 2)
+			modData.swfFatigue = player:getStats():getFatigue()
+			modData.swfEndurance = player:getStats():getEndurance()
+			modData.swfBoredom = player:getStats():getBoredom()
+			modData.swfSadness = player:getStats():getMorale()
+			modData.swfAutoWake = SandboxVars.SleepWithFriends.AutoWake
+			modData.swfFatOne = (24 / modData.swfServerDayLength)
+			modData.swfFatTwo = (1 / modData.swfFatOne)
+			modData.swfFatThree = (modData.swfFatTwo / SandboxVars.SleepWithFriends.SleepLength)
+			modData.swfEndur = (modData.swfFatThree * SandboxVars.SleepWithFriends.EndurMulti)
+			modData.swfLoopCheck = 1
 		end
 	else
-		local LoopCheck = 0
+		modData.swfLoopCheck = 0
 	end
 end
 Events.EveryOneMinute.Add(mpSleep)
