@@ -2,11 +2,18 @@ VERSION = 1,
 
 option SleepWithFriends.SleepLength
 {
-	type = enum,
-	numValues = 10,
+	type = string,
 	default = 2,
 	page = TimeOptions,
 	translation = SleepWithFriends_SleepLength,
+}
+
+option SleepWithFriends.EndurMulti
+{
+	type = string,
+	default = 2,
+	page = TimeOptions,
+	translation = SleepWithFriends_EndurMulti,
 }
 
 option SleepWithFriends.AutoWake
@@ -16,12 +23,4 @@ option SleepWithFriends.AutoWake
 	default = 1,
 	page = TimeOptions,
 	translation = SleepWithFriends_AutoWake,
-}
-
-option SleepWithFriends.TestOption
-{
-	type = string,
-	default = 2,
-	page = TimeOptions,
-	translation = SleepWithFriends_TestOption,
 }
