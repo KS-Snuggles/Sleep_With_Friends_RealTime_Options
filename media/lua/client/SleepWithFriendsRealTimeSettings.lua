@@ -5,15 +5,13 @@ function mpSleep()
 		if  modData.swfLoopCheck == 1 then
 			modData.swfFatigue = (modData.swfFatigue - modData.swfFatThree)
 			modData.swfEndurance = (modData.swfEndurance + modData.swfEndur)
-			player:getStats():setFatigue(math.max(0, modData.swfFatigue)
-			player:getStats():setEndurance(math.min(1, modData.swfEndurance)
+			player:getStats():setFatigue(math.max(0, modData.swfFatigue))
+			player:getStats():setEndurance(math.min(1, modData.swfEndurance))
 			player:getStats():setBoredom(modData.swfBoredom)
 			player:getStats():setMorale(modData.swfSadness)
 			if player:getStats():getFatigue() <= 0 and modData.swfAutoWake == 1 then
 				modData.swfLoopCheck = 0
 				player:forceAwake()
-			elseif player:getStats():getFatigue() <= 0 and modData.swfAutoWake == 2 then
-				player:getStats():setFatigue(0)
 			else
 			end
         elseif modData.swfLoopCheck == 0 then
