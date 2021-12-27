@@ -1,6 +1,6 @@
-name=Sleep With Friends TEST BRANCH
-id=SleepWithFriendsTESTBRANCH
-description=Sleeping solution for Multiplayer. TEST BRANCH * TEST BRANCH * TEST BRANCH
+name=Sleep With Friends
+id=SleepWithFriends
+description=Sleeping solution for Multiplayer. Get a full nights rest in just a few real time minutes instead of 20+!!! 
 poster=poster.png
-modversion=1.0
-pzversion=41.64+
+modversion=1.2
+pzversion=41+
