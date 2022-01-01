@@ -1,9 +1,17 @@
 VERSION = 1,
+option SleepWithFriends.RTorIG
+{
+	type = enum,
+	numValues = 2,
+	default = 1,
+	page = TimeOptions,
+	translation = SleepWithFriends_RTorIG,
+}
 
 option SleepWithFriends.SleepLength
 {
 	type = string,
-	default = 2,
+	default = 2.0,
 	page = TimeOptions,
 	translation = SleepWithFriends_SleepLength,
 }
@@ -11,7 +19,7 @@ option SleepWithFriends.SleepLength
 option SleepWithFriends.EndurMulti
 {
 	type = string,
-	default = 2,
+	default = 2.0,
 	page = TimeOptions,
 	translation = SleepWithFriends_EndurMulti,
 }
