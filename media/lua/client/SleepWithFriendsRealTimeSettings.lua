@@ -8,7 +8,7 @@ function getVars()
 end
 function fixHours()
 	local player = getPlayer()
-    local modData = player:getModData()
+	local modData = player:getModData()
 	if SandboxVars.DayLength == 1 then
 		modData.swfServerDayLength = .25
 		Events.EveryOneMinute.Add(swfRT)
